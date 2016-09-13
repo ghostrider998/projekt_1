@@ -7,7 +7,8 @@ using System.IO;
 
 namespace TimeManagementTool
 {
-    public class task
+
+    public class task                                //declares what variables a task has                                                           
     {
         private bool priority, urgency, done;
         private string name, deskription;
@@ -45,7 +46,7 @@ namespace TimeManagementTool
             set { deskription = value; }
         }
     }
-    public class timeManagement
+    public class timeManagement                      // contains task-list 
     {
         protected List<task> tasks = new List<task>();
         //public List<task> Tasks
@@ -54,7 +55,7 @@ namespace TimeManagementTool
         //    set { tasks = value; }
         //    }
 
-        public void initialyse()
+        public void initialyse()                                        //Reads the infomation from a csv-file and saves it into a task-list
         {
 
             StreamReader read = new StreamReader("Path to csv file");
@@ -83,59 +84,69 @@ namespace TimeManagementTool
             }
         }
 
-    }
-
-    public class input: timeManagement
+    }                   
+    public class input : timeManagement             // interface
     {
-        public void show_sort()
+        public void sort(List<task> A, List<task> B, List<task> C, List<task> D)                        //sorts the task in the 4 sections and wirtes them
         {
-            for (int i = 0; i <tasks.Count ; i++)
-			{
-			    Console.WriteLine("A:");
-                if(tasks[i].Priority=true)
+            
+            for (int i = 0; i < tasks.Count; i++)           //A
+            {
+                if (tasks[i].Priority == true)
                 {
-                    if(tasks[i].Urgency=true)
+                    if (tasks[i].Urgency == true)
                     {
-                        Console.WriteLine(tasks[i].Name+"\n"+tasks[i].Deskription);
+                        A.Add(tasks[i]);                
                     }
                 }
-			}
+            }
 
-            for (int i = 0; i <tasks.Count ; i++)
-			{
-			    Console.WriteLine("B:");
-                if(tasks[i].Priority=true)
+            for (int i = 0; i < tasks.Count; i++)           //B
+            {
+                if (tasks[i].Priority == true)
                 {
-                    if(tasks[i].Urgency=false)
+                    if (tasks[i].Urgency == false)
                     {
-                        Console.WriteLine(tasks[i].Name+"\n"+tasks[i].Deskription);
+                        B.Add(tasks[i]);                                                                             
                     }
                 }
-			}
+            }
 
-            for (int i = 0; i <tasks.Count ; i++)
-			{
-			    Console.WriteLine("C:");
-                if(tasks[i].Priority=false)
+            for (int i = 0; i < tasks.Count; i++)           //C
+            {
+                if (tasks[i].Priority == false)
                 {
-                    if(tasks[i].Urgency=true)
+                    if (tasks[i].Urgency == true)
                     {
-                        Console.WriteLine(tasks[i].Name+"\n"+tasks[i].Deskription);
+                        C.Add(tasks[i]); 
                     }
                 }
-			}
-            for (int i = 0; i <tasks.Count ; i++)
-			{
-			    Console.WriteLine("D:");
-                if(tasks[i].Priority=false)
+            }
+
+            for (int i = 0; i < tasks.Count; i++)           //D
+            {
+                if (tasks[i].Priority == false)
                 {
-                    if(tasks[i].Urgency=false)
+                    if (tasks[i].Urgency == false)
                     {
-                        Console.WriteLine(tasks[i].Name+"\n"+tasks[i].Deskription);
+                        D.Add(tasks[i]); 
                     }
                 }
-			}
+            }
+        }                       
 
-
+        public void mark_done(task tasktodone)                       //marks the selected task as done
+        {
+           tasktodone.Done = true;
         }
+
+        public void clearList()                         //deletes everything in the list
+        {
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                tasks[i] = null;
+            }
+        }
+
+    }
 }
