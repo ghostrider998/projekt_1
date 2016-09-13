@@ -1,0 +1,5 @@
+C:\Users\Lukas\Documents\projekt_1\TimeManagementTool\TimeManagementTool\bin\Debug\TimeManagementTool.dll
+C:\Users\Lukas\Documents\projekt_1\TimeManagementTool\TimeManagementTool\bin\Debug\TimeManagementTool.pdb
+C:\Users\Lukas\Documents\projekt_1\TimeManagementTool\TimeManagementTool\obj\Debug\TimeManagementTool.csprojResolveAssemblyReference.cache
+C:\Users\Lukas\Documents\projekt_1\TimeManagementTool\TimeManagementTool\obj\Debug\TimeManagementTool.dll
+C:\Users\Lukas\Documents\projekt_1\TimeManagementTool\TimeManagementTool\obj\Debug\TimeManagementTool.pdb

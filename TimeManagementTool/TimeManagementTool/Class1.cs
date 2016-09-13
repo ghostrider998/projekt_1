@@ -47,7 +47,12 @@ namespace TimeManagementTool
     }
     public class timeManagement
     {
-        List<task> tasks = new List<task>();
+        protected List<task> tasks = new List<task>();
+        //public List<task> Tasks
+        //   {
+        //    get { return tasks; }
+        //    set { tasks = value; }
+        //    }
 
         public void initialyse()
         {
@@ -70,6 +75,7 @@ namespace TimeManagementTool
                         urgency = true;
                     else
                         urgency = false;
+                    tasks.Add(new task(priority, urgency, splitSave[0], splitSave[1]));
                     
                 }
 
@@ -78,4 +84,58 @@ namespace TimeManagementTool
         }
 
     }
+
+    public class input: timeManagement
+    {
+        public void show_sort()
+        {
+            for (int i = 0; i <tasks.Count ; i++)
+			{
+			    Console.WriteLine("A:");
+                if(tasks[i].Priority=true)
+                {
+                    if(tasks[i].Urgency=true)
+                    {
+                        Console.WriteLine(tasks[i].Name+"\n"+tasks[i].Deskription);
+                    }
+                }
+			}
+
+            for (int i = 0; i <tasks.Count ; i++)
+			{
+			    Console.WriteLine("B:");
+                if(tasks[i].Priority=true)
+                {
+                    if(tasks[i].Urgency=false)
+                    {
+                        Console.WriteLine(tasks[i].Name+"\n"+tasks[i].Deskription);
+                    }
+                }
+			}
+
+            for (int i = 0; i <tasks.Count ; i++)
+			{
+			    Console.WriteLine("C:");
+                if(tasks[i].Priority=false)
+                {
+                    if(tasks[i].Urgency=true)
+                    {
+                        Console.WriteLine(tasks[i].Name+"\n"+tasks[i].Deskription);
+                    }
+                }
+			}
+            for (int i = 0; i <tasks.Count ; i++)
+			{
+			    Console.WriteLine("D:");
+                if(tasks[i].Priority=false)
+                {
+                    if(tasks[i].Urgency=false)
+                    {
+                        Console.WriteLine(tasks[i].Name+"\n"+tasks[i].Deskription);
+                    }
+                }
+			}
+
+
+        }
 }
